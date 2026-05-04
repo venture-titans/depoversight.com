@@ -1,0 +1,95 @@
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/jetbrains-mono';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  height: 100%;
+  background: theme('colors.ink.950');
+  color: theme('colors.fg.DEFAULT');
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: theme('fontFamily.sans');
+  /* Inter looks best with slight letter-spacing tightening at body size. */
+  letter-spacing: -0.005em;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid theme('colors.accent.ring');
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: theme('colors.accent.DEFAULT');
+  color: theme('colors.ink.950');
+}
+
+/* Skip-to-content link — visually hidden until focused, then pinned to the
+ * top-left corner. Lets keyboard / screen-reader users bypass the nav. */
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.625rem 0.875rem;
+  border-radius: 0 0 0.5rem 0;
+  background: theme('colors.ink.700');
+  color: theme('colors.fg.DEFAULT');
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid theme('colors.line.strong');
+  border-top: none;
+  border-left: none;
+  transform: translateY(-110%);
+  transition: transform 150ms ease-out;
+  z-index: 100;
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline: 2px solid theme('colors.accent.ring');
+  outline-offset: -2px;
+}
+
+/* Live indicator — minimal pulse to suggest real-time data without being noisy.
+ * Auto-disabled by the prefers-reduced-motion block above. */
+@keyframes live-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(0.85); }
+}
+
+.live-pulse-dot {
+  animation: live-pulse 1.8s ease-in-out infinite;
+}

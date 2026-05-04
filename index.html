@@ -1,12 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DepoVersight</title>
-</head>
-<body>
-  <h1>DepoVersight</h1>
-  <p>Coming soon.</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0a0c10" />
+
+    <!-- Critical inline styles — paint the page in brand colours before the
+         external CSS bundle arrives, so refresh doesn't flash unstyled
+         black-on-white content. Mirrors the load-bearing rules from
+         src/styles/globals.css; once the external CSS loads the computed
+         styles are identical and no second visual jump occurs. -->
+    <style>
+      :root { color-scheme: dark; }
+      html, body { background: #0a0c10; color: #e6edf3; height: 100%; margin: 0; }
+      body {
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        letter-spacing: -0.005em;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      #root { min-height: 100vh; }
+    </style>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="canonical" href="https://depoversight.com/" />
+
+    <title>DepOversight — Dependency intelligence before disclosure</title>
+    <meta
+      name="description"
+      content="DepOversight monitors upstream PRs, commits, issues, and releases to surface dependency security signals before CVEs, advisories, or scanner alerts exist."
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://depoversight.com/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="es_ES" />
+    <meta property="og:locale:alternate" content="fr_FR" />
+    <meta property="og:locale:alternate" content="de_DE" />
+    <meta property="og:locale:alternate" content="pt_PT" />
+    <meta property="og:locale:alternate" content="ja_JP" />
+    <meta property="og:locale:alternate" content="ko_KR" />
+    <meta property="og:locale:alternate" content="nl_NL" />
+    <meta property="og:locale:alternate" content="it_IT" />
+    <meta property="og:locale:alternate" content="pl_PL" />
+    <meta property="og:locale:alternate" content="sv_SE" />
+    <meta property="og:locale:alternate" content="fi_FI" />
+    <meta
+      property="og:title"
+      content="Know when your dependencies become risky before your scanner tells you"
+    />
+    <meta
+      property="og:description"
+      content="Dependency intelligence for pre-advisory risk, unreleased fixes, silent patches, and risky dependency updates."
+    />
+    <meta property="og:image" content="https://depoversight.com/og-image.svg" />
+    <meta
+      property="og:image:alt"
+      content="DepOversight — dependency intelligence before disclosure. Know when your dependencies become risky before your scanner tells you."
+    />
+    <meta property="og:site_name" content="DepOversight" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Know when your dependencies become risky before your scanner tells you"
+    />
+    <meta
+      name="twitter:description"
+      content="Dependency intelligence for pre-advisory risk, unreleased fixes, silent patches, and risky dependency updates."
+    />
+    <meta name="twitter:image" content="https://depoversight.com/og-image.svg" />
+    <meta
+      name="twitter:image:alt"
+      content="DepOversight — dependency intelligence before disclosure."
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://depoversight.com/#org",
+            "name": "DepOversight",
+            "url": "https://depoversight.com",
+            "description": "Dependency intelligence before disclosure"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://depoversight.com/#website",
+            "url": "https://depoversight.com",
+            "name": "DepOversight",
+            "publisher": { "@id": "https://depoversight.com/#org" },
+            "inLanguage": ["en", "es", "fr", "de", "pt", "ja", "ko", "nl", "it", "pl", "sv", "fi"]
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://depoversight.com/#app",
+            "name": "DepOversight",
+            "applicationCategory": "SecurityApplication",
+            "operatingSystem": "Web",
+            "description": "Dependency intelligence platform for detecting security-relevant dependency signals before CVEs, advisories, or scanner alerts exist.",
+            "publisher": { "@id": "https://depoversight.com/#org" },
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD",
+              "category": "Early access"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body class="bg-ink-950 text-fg">
+    <div id="root">
+      <!--
+        Static crawler fallback. Search engines and AI crawlers that do not execute
+        JavaScript still see the core product context: value proposition, what we
+        surface, how we differ from CVE scanners, and the trust disclaimer.
+        The React app fully replaces #root on hydration, so JS-enabled visitors
+        never see this block — it exists purely for indexing and AI summarisation.
+      -->
+      <main>
+        <p>
+          <strong>DepOversight</strong> — dependency intelligence before disclosure.
+        </p>
+        <h1>Know when your dependencies become risky before your scanner tells you.</h1>
+        <p>
+          DepOversight monitors upstream PRs, commits, issues, and releases to surface
+          security-relevant signals across your dependency graph before CVEs, advisories,
+          or scanner alerts exist.
+        </p>
+        <p>
+          CVE scanners tell you what is already known. DepOversight shows you what is
+          starting to look risky.
+        </p>
+        <p>
+          <a href="#early-access">Request Early Access</a>
+          &middot;
+          <a href="#demo">View Live Demo</a>
+        </p>
+
+        <h2>Security scenarios DepOversight surfaces</h2>
+        <ul>
+          <li>Risk introduced upstream — a new upstream change widens the security-sensitive surface.</li>
+          <li>Existing risk fixed publicly — a maintainer fixes a security-relevant issue before any advisory is published.</li>
+          <li>Fix merged, but no release exists — patched code is in main; released versions still ship the unfixed path.</li>
+          <li>Silent patch release — a release contains a security-relevant fix without an advisory or release-note callout.</li>
+          <li>Public issue disclosure — a maintainer or reporter posts a security-relevant issue before triage is complete.</li>
+          <li>Risky dependency upgrade — an upgrade introduces new security-sensitive code surface.</li>
+          <li>Reverted or partial fix — a previous fix is reverted, narrowed, or only partially applied.</li>
+          <li>Dependency trust degradation — maintenance signals around a dependency change in ways that warrant a posture review.</li>
+        </ul>
+
+        <h2>How DepOversight differs from a CVE scanner</h2>
+        <p>
+          Traditional scanners answer: <em>“Is this dependency vulnerable?”</em>
+          DepOversight asks: <em>“Should we trust this dependency right now?”</em>
+        </p>
+        <p>
+          The dangerous gap is not after disclosure. It is between the public
+          upstream signal and the official advisory.
+        </p>
+
+        <h2>Disclaimer</h2>
+        <p>
+          Signals are review triggers, not confirmed vulnerabilities, unless tied
+          to a published advisory or CVE.
+        </p>
+      </main>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>

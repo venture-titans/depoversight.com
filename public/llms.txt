@@ -1,0 +1,64 @@
+# DepOversight
+
+> Dependency intelligence platform that monitors upstream open-source PRs, commits, issues, releases, changelogs, and advisories to surface security-relevant dependency signals before CVEs, advisories, or scanner alerts exist.
+
+Canonical URL: https://depoversight.com/
+
+## Supported languages
+
+- en (English) — default
+- es (Español)
+- fr (Français)
+- de (Deutsch)
+- pt (Português)
+- ja (日本語)
+- ko (한국어)
+- nl (Nederlands)
+- it (Italiano)
+- pl (Polski)
+- sv (Svenska)
+- fi (Suomi)
+
+## Key sections
+
+- Hero
+- Live demo dashboard
+- Security scenarios
+- Timeline / exposure window
+- Problem
+- Solution
+- What DepOversight tells you
+- How it works
+- Detection engine
+- Comparison vs CVE scanners
+- Integrations
+- Who it's for
+- Early access form
+
+## What DepOversight does
+
+- Reads upstream activity (PRs, commits, issues, releases, changelogs, advisories) across the declared dependency graph.
+- Detects security-relevant patterns: fix language, security language, disclosure language, surface-area changes.
+- Tags signals by source type: PR, commit, issue, release, changelog, advisory.
+- Tracks release state: merged, released, only on a development branch.
+- Surfaces signals to a review queue with sources, evidence, and recommended action.
+- Provides a PR check that blocks dependency updates touching flagged versions until reviewed.
+
+## What DepOversight does not claim
+
+- It does not run exploits.
+- It does not generate proof-of-concept payloads, reproduction steps, or exploitation instructions.
+- It does not claim to detect all vulnerabilities.
+- It does not claim guaranteed pre-CVE detection.
+
+## Disclaimer
+
+DepOversight surfaces security-relevant review signals based on public upstream activity. A signal is not a confirmed vulnerability unless linked to an advisory or CVE.
+
+## Early access
+
+Request early access at https://depoversight.com/#early-access
+
+## Full document
+
+See https://depoversight.com/llms-full.txt

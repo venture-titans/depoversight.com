@@ -1,0 +1,81 @@
+# DepOversight — Dependency intelligence before disclosure
+
+## Product description
+
+DepOversight is a dependency intelligence platform. It monitors upstream open-source activity — pull requests, commits, issues, releases, changelogs, and advisories — across the dependency graph that a team declares, and surfaces security-relevant signals before CVEs, advisories, or scanner alerts exist.
+
+## Core positioning
+
+CVE scanners tell you what is already known. DepOversight shows you what is starting to look risky.
+
+DepOversight tracks security posture changes across your open-source dependencies — from risky PRs and public fixes to unreleased patches and pre-advisory exposure windows.
+
+Traditional scanners answer: "Is this dependency vulnerable?" DepOversight asks: "Should we trust this dependency right now?"
+
+The dangerous gap is not after disclosure. It is between the public upstream signal and the official advisory.
+
+## Demo dashboard
+
+The marketing site includes an illustrative dashboard for a fictional project, `acme/storage-gateway`, depending on a fictional placeholder dependency, `github.com/depoversight-demo/example-store`. It renders four signal cards (public security issue disclosed, public fix before advisory, fix merged but unreleased, dependency update requires review), severity filters (All, High, Review, Monitoring, Blocked), a timeline drawer, and a GitHub-style PR check preview.
+
+All demo data is illustrative. The dependency name is a fictional placeholder and does not describe an actual project, advisory, or vulnerability.
+
+## Security scenarios DepOversight surfaces
+
+1. Risk introduced upstream — a new upstream change widens a security-sensitive surface.
+2. Existing risk fixed publicly — a maintainer fixes a security-relevant issue in the open before any advisory.
+3. Fix merged, but no release exists — patched code is in main; released versions still ship the unfixed path.
+4. Silent patch release — a release contains a security-relevant fix without an advisory or release-note callout.
+5. Public issue disclosure — a maintainer or reporter posts a security-relevant issue before triage is complete.
+6. Risky dependency upgrade — an upgrade introduces new security-sensitive code surface.
+7. Reverted or partial fix — a previous fix is reverted, narrowed, or only partially applied.
+8. Dependency trust degradation — maintenance signals around a dependency change in ways that warrant a posture review.
+
+## How it works
+
+1. Watch upstream — continuously read PRs, commits, issues, releases, and changelogs across the declared dependency graph.
+2. Detect security-relevant signals — apply detection rules tuned for security-relevant upstream activity (language patterns, code surface changes, disclosure patterns).
+3. Surface review-worthy events — promote signals to a review queue with sources, evidence, and recommended action.
+4. Block risky merges — a PR check stops dependency updates that touch flagged versions until reviewed.
+
+## Detection engine
+
+DepOversight does not run exploits. It reads upstream activity and surfaces patterns that experienced security engineers already look for.
+
+- Source-type tagging: PR, commit, issue, release, changelog, advisory.
+- Language pattern detection: identifies fix-language, security-language, and disclosure-language without claiming an exploit exists.
+- Surface-area awareness: flags PRs that touch authentication, parsing, deserialization, network, or process boundaries.
+- Release-state tracking: tracks whether a fix is merged, released, or only present in a development branch.
+
+Signals are review triggers, not confirmed vulnerabilities, unless tied to a published advisory or CVE.
+
+## Comparison with CVE scanners
+
+| Capability | CVE scanner | DepOversight |
+| --- | --- | --- |
+| Detects published CVEs | Yes | Surfaces them |
+| Surfaces public upstream fixes before advisory | No | Yes |
+| Flags silent patch releases | No | Yes |
+| Detects PRs in security-sensitive code | No | Yes |
+| Highlights exposure windows | No | Yes |
+| Blocks risky dependency upgrades pre-merge | Limited | Yes |
+
+## Disclaimer
+
+DepOversight surfaces security-relevant review signals based on public upstream activity. A signal is not a confirmed vulnerability unless linked to an advisory or CVE.
+
+DepOversight does not generate exploit code, proof-of-concept payloads, reproduction steps, exploitation instructions, or vulnerable query examples. It does not claim to detect all vulnerabilities, find zero-days, or provide guaranteed pre-CVE detection.
+
+## Early access
+
+Request early access: https://depoversight.com/#early-access
+
+The early-access form collects:
+- Work email (required)
+- Company (optional)
+- GitHub org (optional)
+- Main package ecosystem (optional)
+- Current tool — Dependabot, Snyk, GitHub Advanced Security, Socket, Semgrep, Other (optional)
+- Message (optional)
+
+The form is frontend-only on the marketing site for the first version.
