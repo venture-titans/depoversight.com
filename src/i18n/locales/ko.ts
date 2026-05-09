@@ -483,6 +483,24 @@ const ko = {
       '며칠 내에 연락드리겠습니다. 얼리 액세스 슬롯은 배치 단위로 열립니다 — 대기 중이어도 회신드립니다.',
     privacyNotice: '제출하면 <link>개인정보 보호정책</link>에 동의한 것으로 간주됩니다.',
   },
+  blog: {
+    indexTitle: '블로그',
+    indexLead:
+      '의존성 보안, 공급망 사고, 공개 전에 우리가 감지하는 신호에 대한 현장 노트.',
+    readMore: '글 읽기',
+    minRead: '{{count}}분 분량',
+    publishedOn: '게시일: {{date}}',
+    updatedOn: '업데이트일: {{date}}',
+    backToIndex: '블로그로 돌아가기',
+    tagsLabel: '태그',
+    rawMarkdown: '마크다운으로 보기',
+    empty: '아직 게시글이 없습니다, 곧 다시 확인해 주세요.',
+    categories: {
+      industry: '업계',
+      fundamentals: '기초',
+      tools: '도구',
+    },
+  },
   footer: {
     tagline: '공개 이전의 의존성 인텔리전스.',
     copyright: '© {{year}} DepOversight. All rights reserved.',

@@ -483,6 +483,24 @@ const es = {
       'Te contactaremos en unos días. Los cupos de acceso anticipado se abren por lotes — recibirás respuesta incluso si estás en cola.',
     privacyNotice: 'Al enviar aceptas nuestra <link>política de privacidad</link>.',
   },
+  blog: {
+    indexTitle: 'Blog',
+    indexLead:
+      'Apuntes sobre seguridad de dependencias, incidentes de la cadena de suministro y lo que detectamos antes de la divulgación.',
+    readMore: 'Leer artículo',
+    minRead: '{{count}} min de lectura',
+    publishedOn: 'Publicado el {{date}}',
+    updatedOn: 'Actualizado el {{date}}',
+    backToIndex: 'Volver al blog',
+    tagsLabel: 'Etiquetas',
+    rawMarkdown: 'Ver como markdown',
+    empty: 'Aún no hay artículos, vuelva pronto.',
+    categories: {
+      industry: 'Sector',
+      fundamentals: 'Fundamentos',
+      tools: 'Herramientas',
+    },
+  },
   footer: {
     tagline: 'Inteligencia de dependencias antes de la divulgación.',
     copyright: '© {{year}} DepOversight. Todos los derechos reservados.',

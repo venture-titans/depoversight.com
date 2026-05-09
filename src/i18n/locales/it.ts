@@ -483,6 +483,24 @@ const it = {
       'Ti ricontatteremo in pochi giorni. I posti per l’accesso anticipato si aprono a lotti — riceverai una risposta anche se sei in coda.',
     privacyNotice: 'Inviando accetti la nostra <link>informativa sulla privacy</link>.',
   },
+  blog: {
+    indexTitle: 'Blog',
+    indexLead:
+      'Note dal campo su sicurezza delle dipendenze, incidenti nella supply chain e ciò che rileviamo prima della divulgazione.',
+    readMore: 'Leggi articolo',
+    minRead: '{{count}} min di lettura',
+    publishedOn: 'Pubblicato il {{date}}',
+    updatedOn: 'Aggiornato il {{date}}',
+    backToIndex: 'Torna al blog',
+    tagsLabel: 'Tag',
+    rawMarkdown: 'Visualizza come markdown',
+    empty: 'Nessun articolo ancora, torna presto.',
+    categories: {
+      industry: 'Settore',
+      fundamentals: 'Fondamenti',
+      tools: 'Strumenti',
+    },
+  },
   footer: {
     tagline: 'Intelligence sulle dipendenze prima della divulgazione.',
     copyright: '© {{year}} DepOversight. Tutti i diritti riservati.',

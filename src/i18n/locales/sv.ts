@@ -483,6 +483,24 @@ const sv = {
       'Vi hör av oss inom några dagar. Platser för tidig tillgång öppnas i omgångar — du får svar även om du står i kö.',
     privacyNotice: 'Genom att skicka godkänner du vår <link>integritetspolicy</link>.',
   },
+  blog: {
+    indexTitle: 'Blogg',
+    indexLead:
+      'Fältanteckningar om beroendesäkerhet, leveranskedjeincidenter och det vi upptäcker före offentliggörandet.',
+    readMore: 'Läs inlägget',
+    minRead: '{{count}} min läsning',
+    publishedOn: 'Publicerat {{date}}',
+    updatedOn: 'Uppdaterat {{date}}',
+    backToIndex: 'Tillbaka till bloggen',
+    tagsLabel: 'Taggar',
+    rawMarkdown: 'Visa som markdown',
+    empty: 'Inga inlägg ännu, kom tillbaka snart.',
+    categories: {
+      industry: 'Bransch',
+      fundamentals: 'Grunderna',
+      tools: 'Verktyg',
+    },
+  },
   footer: {
     tagline: 'Beroendeintelligens före avslöjande.',
     copyright: '© {{year}} DepOversight. Alla rättigheter förbehållna.',

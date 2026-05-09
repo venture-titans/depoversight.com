@@ -1,12 +1,13 @@
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link, useLocation } from 'react-router-dom';
 import { LanguageSelector } from './LanguageSelector';
 
 const NAV_ANCHORS = [
-  { href: '#demo', key: 'demo' as const },
-  { href: '#how-it-works', key: 'howItWorks' as const },
-  { href: '#comparison', key: 'compare' as const },
-  { href: '#integrations', key: 'integrations' as const },
+  { anchor: 'demo', key: 'demo' as const },
+  { anchor: 'how-it-works', key: 'howItWorks' as const },
+  { anchor: 'comparison', key: 'compare' as const },
+  { anchor: 'integrations', key: 'integrations' as const },
 ];
 
 interface Props {
@@ -16,6 +17,8 @@ interface Props {
 
 export function MobileMenu({ open, onClose }: Props) {
   const { t } = useTranslation();
+  const { pathname } = useLocation();
+  const isHome = pathname === '/';
 
   useEffect(() => {
     if (!open) return;
@@ -54,35 +57,78 @@ export function MobileMenu({ open, onClose }: Props) {
         </div>
         <nav className="flex-1 overflow-y-auto p-5">
           <ul className="space-y-1">
-            {NAV_ANCHORS.map((item) => (
-              <li key={item.key}>
-                <a
-                  href={item.href}
-                  onClick={onClose}
-                  className="flex min-h-[44px] items-center justify-between rounded-md px-3 py-2 text-base text-fg hover:bg-ink-700"
+            {NAV_ANCHORS.map((item) => {
+              const linkClass =
+                'flex min-h-[44px] items-center justify-between rounded-md px-3 py-2 text-base text-fg hover:bg-ink-700';
+              const chevron = (
+                <svg
+                  viewBox="0 0 12 12"
+                  className="h-3 w-3 text-fg-subtle"
+                  fill="none"
+                  aria-hidden="true"
                 >
-                  {t(`nav.links.${item.key}`)}
-                  <svg viewBox="0 0 12 12" className="h-3 w-3 text-fg-subtle" fill="none" aria-hidden="true">
-                    <path
-                      d="M4.5 3L7.5 6L4.5 9"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </a>
-              </li>
-            ))}
+                  <path
+                    d="M4.5 3L7.5 6L4.5 9"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              );
+              return (
+                <li key={item.key}>
+                  {isHome ? (
+                    <a href={`#${item.anchor}`} onClick={onClose} className={linkClass}>
+                      {t(`nav.links.${item.key}`)}
+                      {chevron}
+                    </a>
+                  ) : (
+                    <Link to={`/#${item.anchor}`} onClick={onClose} className={linkClass}>
+                      {t(`nav.links.${item.key}`)}
+                      {chevron}
+                    </Link>
+                  )}
+                </li>
+              );
+            })}
+            <li>
+              <Link
+                to="/blog"
+                onClick={onClose}
+                className="flex min-h-[44px] items-center justify-between rounded-md px-3 py-2 text-base text-fg hover:bg-ink-700"
+              >
+                {t('blog.indexTitle')}
+                <svg viewBox="0 0 12 12" className="h-3 w-3 text-fg-subtle" fill="none" aria-hidden="true">
+                  <path
+                    d="M4.5 3L7.5 6L4.5 9"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </Link>
+            </li>
           </ul>
           <div className="mt-8">
-            <a
-              href="#early-access"
-              onClick={onClose}
-              className="flex h-11 w-full items-center justify-center rounded-md bg-accent text-ink-950 font-medium hover:bg-accent-hover"
-            >
-              {t('nav.cta')}
-            </a>
+            {isHome ? (
+              <a
+                href="#early-access"
+                onClick={onClose}
+                className="flex h-11 w-full items-center justify-center rounded-md bg-accent text-ink-950 font-medium hover:bg-accent-hover"
+              >
+                {t('nav.cta')}
+              </a>
+            ) : (
+              <Link
+                to="/#early-access"
+                onClick={onClose}
+                className="flex h-11 w-full items-center justify-center rounded-md bg-accent text-ink-950 font-medium hover:bg-accent-hover"
+              >
+                {t('nav.cta')}
+              </Link>
+            )}
           </div>
           <div className="mt-8">
             <p className="mb-3 text-xs uppercase tracking-wider text-fg-subtle">

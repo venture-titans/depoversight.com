@@ -479,6 +479,24 @@ export const en = {
       "We'll reach out within a few days. Early access slots open in batches — you'll hear back even if you're queued.",
     privacyNotice: 'By submitting you agree to our <link>privacy policy</link>.',
   },
+  blog: {
+    indexTitle: 'Blog',
+    indexLead:
+      'Field notes on dependency security, supply-chain incidents, and what we surface before disclosure.',
+    readMore: 'Read post',
+    minRead: '{{count}} min read',
+    publishedOn: 'Published {{date}}',
+    updatedOn: 'Updated {{date}}',
+    backToIndex: 'Back to blog',
+    tagsLabel: 'Tags',
+    rawMarkdown: 'View as markdown',
+    empty: 'No posts yet, check back soon.',
+    categories: {
+      industry: 'Industry',
+      fundamentals: 'Fundamentals',
+      tools: 'Tools',
+    },
+  },
   footer: {
     tagline: 'Dependency intelligence before disclosure.',
     copyright: '© {{year}} DepOversight. All rights reserved.',

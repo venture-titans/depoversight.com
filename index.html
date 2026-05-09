@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#0a0c10" />
 
+    <!-- Add a `js` class to <html> synchronously before the body parses, so the
+         CSS rule below can hide the crawler fallback for JS-enabled visitors.
+         Crawlers and JS-disabled clients never see this run, so the fallback
+         stays visible for them. Inline so it executes before the parser hits
+         <body> and avoids any flash of unstyled fallback markup. -->
+    <script>document.documentElement.classList.add('js');</script>
+
     <!-- Critical inline styles — paint the page in brand colours before the
          external CSS bundle arrives, so refresh doesn't flash unstyled
          black-on-white content. Mirrors the load-bearing rules from
@@ -20,6 +27,10 @@
         -moz-osx-font-smoothing: grayscale;
       }
       #root { min-height: 100vh; }
+      /* Crawler fallback — visible to no-JS clients, hidden once JS runs. The
+       * React app fully replaces #root on mount, so this only affects the
+       * brief window between HTML parse and React render. */
+      html.js #root > main { display: none; }
     </style>
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

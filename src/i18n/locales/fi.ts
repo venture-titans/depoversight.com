@@ -483,6 +483,24 @@ const fi = {
       'Otamme yhteyttä muutaman päivän sisällä. Varhaisen pääsyn paikkoja avataan erissä — saat vastauksen vaikka olisit jonossa.',
     privacyNotice: 'Lähettämällä hyväksyt <link>tietosuojakäytäntömme</link>.',
   },
+  blog: {
+    indexTitle: 'Blogi',
+    indexLead:
+      'Kenttämuistiinpanoja riippuvuusturvallisuudesta, toimitusketjun tapauksista ja siitä, mitä tunnistamme ennen julkistusta.',
+    readMore: 'Lue julkaisu',
+    minRead: '{{count}} min lukuaika',
+    publishedOn: 'Julkaistu {{date}}',
+    updatedOn: 'Päivitetty {{date}}',
+    backToIndex: 'Takaisin blogiin',
+    tagsLabel: 'Tunnisteet',
+    rawMarkdown: 'Näytä markdownina',
+    empty: 'Ei vielä julkaisuja, palaa pian.',
+    categories: {
+      industry: 'Toimiala',
+      fundamentals: 'Perusteet',
+      tools: 'Työkalut',
+    },
+  },
   footer: {
     tagline: 'Riippuvuusälykkyys ennen paljastusta.',
     copyright: '© {{year}} DepOversight. Kaikki oikeudet pidätetään.',

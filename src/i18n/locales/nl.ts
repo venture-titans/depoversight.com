@@ -483,6 +483,24 @@ const nl = {
       'We nemen binnen enkele dagen contact op. Vroege-toegang-plaatsen openen in batches — u krijgt een reactie ook als u in de wachtrij staat.',
     privacyNotice: 'Door te verzenden gaat u akkoord met ons <link>privacybeleid</link>.',
   },
+  blog: {
+    indexTitle: 'Blog',
+    indexLead:
+      'Veldnotities over afhankelijkheidsbeveiliging, supply-chain-incidenten en wat we signaleren vóór openbaarmaking.',
+    readMore: 'Lees artikel',
+    minRead: '{{count}} min leestijd',
+    publishedOn: 'Gepubliceerd op {{date}}',
+    updatedOn: 'Bijgewerkt op {{date}}',
+    backToIndex: 'Terug naar blog',
+    tagsLabel: 'Tags',
+    rawMarkdown: 'Bekijk als markdown',
+    empty: 'Nog geen artikelen, kom snel terug.',
+    categories: {
+      industry: 'Branche',
+      fundamentals: 'Basis',
+      tools: 'Tools',
+    },
+  },
   footer: {
     tagline: 'Dependency-intelligence vóór de disclosure.',
     copyright: '© {{year}} DepOversight. Alle rechten voorbehouden.',

@@ -483,6 +483,24 @@ const ja = {
       '数日以内にご連絡します。早期アクセス枠はバッチで開放されます — 順番待ちの場合でもお返事します。',
     privacyNotice: '送信すると<link>プライバシーポリシー</link>に同意したものとみなされます。',
   },
+  blog: {
+    indexTitle: 'ブログ',
+    indexLead:
+      '依存関係のセキュリティ、サプライチェーン事案、公開前に検出する兆候についての現場からのノート。',
+    readMore: '記事を読む',
+    minRead: '{{count}} 分で読めます',
+    publishedOn: '公開日: {{date}}',
+    updatedOn: '更新日: {{date}}',
+    backToIndex: 'ブログ一覧へ戻る',
+    tagsLabel: 'タグ',
+    rawMarkdown: 'Markdown 形式で表示',
+    empty: 'まだ記事はありません, またお越しください。',
+    categories: {
+      industry: '業界',
+      fundamentals: '基礎',
+      tools: 'ツール',
+    },
+  },
   footer: {
     tagline: '公開前に届く依存関係インテリジェンス。',
     copyright: '© {{year}} DepOversight. All rights reserved.',

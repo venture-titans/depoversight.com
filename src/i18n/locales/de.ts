@@ -483,6 +483,24 @@ const de = {
       'Wir melden uns innerhalb weniger Tage. Frühzugangs-Plätze öffnen in Wellen — Sie erhalten eine Rückmeldung, auch wenn Sie in der Warteschlange sind.',
     privacyNotice: 'Mit dem Absenden akzeptieren Sie unsere <link>Datenschutzrichtlinie</link>.',
   },
+  blog: {
+    indexTitle: 'Blog',
+    indexLead:
+      'Notizen aus dem Feld zu Abhängigkeitssicherheit, Supply-Chain-Vorfällen und allem, was wir vor der Veröffentlichung erkennen.',
+    readMore: 'Beitrag lesen',
+    minRead: '{{count}} Min. Lesezeit',
+    publishedOn: 'Veröffentlicht am {{date}}',
+    updatedOn: 'Aktualisiert am {{date}}',
+    backToIndex: 'Zurück zum Blog',
+    tagsLabel: 'Tags',
+    rawMarkdown: 'Als Markdown anzeigen',
+    empty: 'Noch keine Beiträge, schauen Sie bald wieder vorbei.',
+    categories: {
+      industry: 'Branche',
+      fundamentals: 'Grundlagen',
+      tools: 'Tools',
+    },
+  },
   footer: {
     tagline: 'Dependency-Intelligence vor der Offenlegung.',
     copyright: '© {{year}} DepOversight. Alle Rechte vorbehalten.',

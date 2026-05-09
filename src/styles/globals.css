@@ -93,3 +93,129 @@ html {
 .live-pulse-dot {
   animation: live-pulse 1.8s ease-in-out infinite;
 }
+
+/* Blog post body styling. Applied via the .blog-prose wrapper because the
+ * markdown renderer outputs raw HTML into dangerouslySetInnerHTML — Tailwind
+ * utility classes can't reach those descendants. Kept minimal and aligned
+ * with the rest of the site (same colour tokens, same font stack). */
+.blog-prose {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.blog-prose > * + * {
+  margin-top: 1.1em;
+}
+.blog-prose h1,
+.blog-prose h2,
+.blog-prose h3,
+.blog-prose h4 {
+  color: theme('colors.fg.DEFAULT');
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  scroll-margin-top: 5rem;
+}
+.blog-prose h2 {
+  font-size: 1.5rem;
+  margin-top: 2.25em;
+}
+.blog-prose h3 {
+  font-size: 1.25rem;
+  margin-top: 1.75em;
+}
+.blog-prose h4 {
+  font-size: 1.05rem;
+  margin-top: 1.5em;
+}
+.blog-prose p {
+  color: theme('colors.fg.muted');
+}
+.blog-prose strong {
+  color: theme('colors.fg.DEFAULT');
+  font-weight: 600;
+}
+.blog-prose a {
+  color: theme('colors.accent.DEFAULT');
+  text-decoration: underline;
+  text-decoration-color: rgba(124, 140, 255, 0.4);
+  text-underline-offset: 0.2em;
+}
+.blog-prose a:hover {
+  color: theme('colors.accent.hover');
+  text-decoration-color: currentColor;
+}
+.blog-prose ul,
+.blog-prose ol {
+  padding-left: 1.5em;
+  color: theme('colors.fg.muted');
+}
+.blog-prose ul {
+  list-style: disc;
+}
+.blog-prose ol {
+  list-style: decimal;
+}
+.blog-prose li + li {
+  margin-top: 0.4em;
+}
+.blog-prose li > p {
+  margin: 0;
+}
+.blog-prose blockquote {
+  border-left: 3px solid theme('colors.accent.DEFAULT');
+  padding-left: 1em;
+  color: theme('colors.fg.muted');
+  font-style: italic;
+}
+.blog-prose code {
+  font-family: theme('fontFamily.mono');
+  font-size: 0.9em;
+  background: theme('colors.ink.800');
+  border: 1px solid theme('colors.line.DEFAULT');
+  padding: 0.1em 0.35em;
+  border-radius: 0.25rem;
+  color: theme('colors.fg.DEFAULT');
+}
+.blog-prose pre {
+  background: theme('colors.ink.900');
+  border: 1px solid theme('colors.line.DEFAULT');
+  border-radius: 0.5rem;
+  padding: 1em 1.1em;
+  overflow-x: auto;
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+.blog-prose pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+  color: inherit;
+}
+.blog-prose hr {
+  border: none;
+  border-top: 1px solid theme('colors.line.DEFAULT');
+  margin: 2.5em 0;
+}
+.blog-prose img {
+  border-radius: 0.5rem;
+  border: 1px solid theme('colors.line.DEFAULT');
+  max-width: 100%;
+  height: auto;
+}
+.blog-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95em;
+}
+.blog-prose th,
+.blog-prose td {
+  border: 1px solid theme('colors.line.DEFAULT');
+  padding: 0.6em 0.9em;
+  text-align: left;
+}
+.blog-prose th {
+  background: theme('colors.ink.800');
+  color: theme('colors.fg.DEFAULT');
+  font-weight: 600;
+}

@@ -59,6 +59,10 @@ DepOversight surfaces security-relevant review signals based on public upstream 
 
 Request early access at https://depoversight.com/#early-access
 
+## Blog
+
+<!-- BLOG-INDEX -->
+
 ## Full document
 
 See https://depoversight.com/llms-full.txt

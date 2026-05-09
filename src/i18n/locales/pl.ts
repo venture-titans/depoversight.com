@@ -483,6 +483,24 @@ const pl = {
       'Skontaktujemy się w ciągu kilku dni. Miejsca wczesnego dostępu otwierają się partiami — otrzymasz odpowiedź, nawet jeśli jesteś w kolejce.',
     privacyNotice: 'Wysyłając akceptujesz naszą <link>politykę prywatności</link>.',
   },
+  blog: {
+    indexTitle: 'Blog',
+    indexLead:
+      'Notatki z pola o bezpieczeństwie zależności, incydentach w łańcuchu dostaw i o tym, co wykrywamy jeszcze przed ujawnieniem.',
+    readMore: 'Czytaj wpis',
+    minRead: '{{count}} min czytania',
+    publishedOn: 'Opublikowano {{date}}',
+    updatedOn: 'Zaktualizowano {{date}}',
+    backToIndex: 'Wróć do bloga',
+    tagsLabel: 'Tagi',
+    rawMarkdown: 'Wyświetl jako markdown',
+    empty: 'Jeszcze nie ma wpisów, zajrzyj wkrótce.',
+    categories: {
+      industry: 'Branża',
+      fundamentals: 'Podstawy',
+      tools: 'Narzędzia',
+    },
+  },
   footer: {
     tagline: 'Inteligencja zależności przed ujawnieniem.',
     copyright: '© {{year}} DepOversight. Wszelkie prawa zastrzeżone.',

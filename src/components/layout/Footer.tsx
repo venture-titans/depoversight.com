@@ -1,8 +1,25 @@
 import { useTranslation } from 'react-i18next';
+import { Link, useLocation } from 'react-router-dom';
 
 export function Footer() {
   const { t } = useTranslation();
   const year = new Date().getFullYear();
+  const { pathname } = useLocation();
+  const isHome = pathname === '/';
+
+  // Cross-route hash links use react-router; home-page hash links stay native
+  // so the browser does smooth scroll without a route transition.
+  const homeAnchor = (anchor: string, label: string) =>
+    isHome ? (
+      <a href={`#${anchor}`} className="text-fg-muted hover:text-fg">
+        {label}
+      </a>
+    ) : (
+      <Link to={`/#${anchor}`} className="text-fg-muted hover:text-fg">
+        {label}
+      </Link>
+    );
+
   return (
     <footer className="border-t border-line bg-ink-900">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
@@ -47,25 +64,14 @@ export function Footer() {
               {t('footer.sections.product')}
             </h2>
             <ul className="mt-3 space-y-2 text-sm">
+              <li>{homeAnchor('demo', t('footer.links.demo'))}</li>
+              <li>{homeAnchor('how-it-works', t('footer.links.howItWorks'))}</li>
+              <li>{homeAnchor('comparison', t('footer.links.compare'))}</li>
+              <li>{homeAnchor('early-access', t('footer.links.earlyAccess'))}</li>
               <li>
-                <a href="#demo" className="text-fg-muted hover:text-fg">
-                  {t('footer.links.demo')}
-                </a>
-              </li>
-              <li>
-                <a href="#how-it-works" className="text-fg-muted hover:text-fg">
-                  {t('footer.links.howItWorks')}
-                </a>
-              </li>
-              <li>
-                <a href="#comparison" className="text-fg-muted hover:text-fg">
-                  {t('footer.links.compare')}
-                </a>
-              </li>
-              <li>
-                <a href="#early-access" className="text-fg-muted hover:text-fg">
-                  {t('footer.links.earlyAccess')}
-                </a>
+                <Link to="/blog" className="text-fg-muted hover:text-fg">
+                  {t('blog.indexTitle')}
+                </Link>
               </li>
             </ul>
           </div>

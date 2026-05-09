@@ -483,6 +483,24 @@ const fr = {
       'Nous vous recontacterons sous quelques jours. Les places d’accès anticipé s’ouvrent par vagues — vous aurez une réponse même si vous êtes en file d’attente.',
     privacyNotice: 'En soumettant, vous acceptez notre <link>politique de confidentialité</link>.',
   },
+  blog: {
+    indexTitle: 'Blog',
+    indexLead:
+      'Notes de terrain sur la sécurité des dépendances, les incidents de chaîne d’approvisionnement et ce que nous détectons avant la divulgation.',
+    readMore: 'Lire l’article',
+    minRead: '{{count}} min de lecture',
+    publishedOn: 'Publié le {{date}}',
+    updatedOn: 'Mis à jour le {{date}}',
+    backToIndex: 'Retour au blog',
+    tagsLabel: 'Tags',
+    rawMarkdown: 'Voir en markdown',
+    empty: 'Pas encore d’articles, revenez bientôt.',
+    categories: {
+      industry: 'Secteur',
+      fundamentals: 'Fondamentaux',
+      tools: 'Outils',
+    },
+  },
   footer: {
     tagline: 'Renseignement sur les dépendances avant la divulgation.',
     copyright: '© {{year}} DepOversight. Tous droits réservés.',

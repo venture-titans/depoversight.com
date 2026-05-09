@@ -1,19 +1,12 @@
 import { useTranslation } from 'react-i18next';
+import { Route, Routes } from 'react-router-dom';
 import { Nav } from './components/layout/Nav';
 import { Footer } from './components/layout/Footer';
 import { StickyMobileCta } from './components/layout/StickyMobileCta';
-import { Hero } from './components/sections/Hero';
-import { DemoDashboard } from './components/sections/DemoDashboard';
-import { SecurityScenarios } from './components/sections/SecurityScenarios';
-import { Timeline } from './components/sections/Timeline';
-import { Problem } from './components/sections/Problem';
-import { Solution } from './components/sections/Solution';
-import { WhatItTellsYou } from './components/sections/WhatItTellsYou';
-import { HowItWorks } from './components/sections/HowItWorks';
-import { Comparison } from './components/sections/Comparison';
-import { Integrations } from './components/sections/Integrations';
-import { WhoItsFor } from './components/sections/WhoItsFor';
-import { EarlyAccess } from './components/sections/EarlyAccess';
+import { Home } from './routes/Home';
+import { BlogIndex } from './routes/BlogIndex';
+import { BlogSlugOrCategory } from './routes/BlogSlugOrCategory';
+import { ScrollToTop } from './routes/ScrollToTop';
 
 export default function App() {
   const { t } = useTranslation();
@@ -22,20 +15,15 @@ export default function App() {
       <a href="#main-content" className="skip-link">
         {t('nav.skipToContent')}
       </a>
+      <ScrollToTop />
       <Nav />
       <main id="main-content">
-        <Hero />
-        <DemoDashboard />
-        <SecurityScenarios />
-        <Timeline />
-        <Problem />
-        <Solution />
-        <WhatItTellsYou />
-        <HowItWorks />
-        <Comparison />
-        <Integrations />
-        <WhoItsFor />
-        <EarlyAccess />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/blog" element={<BlogIndex />} />
+          <Route path="/blog/:slug" element={<BlogSlugOrCategory />} />
+          <Route path="*" element={<Home />} />
+        </Routes>
       </main>
       <Footer />
       <StickyMobileCta />
