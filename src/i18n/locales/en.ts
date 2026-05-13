@@ -25,7 +25,7 @@ export const en = {
     oneLiner:
       'CVE scanners tell you what is already known. DepOversight shows you what is starting to look risky.',
     primaryCta: 'Request Early Access',
-    secondaryCta: 'Try the demo',
+    secondaryCta: 'Interactive demo',
     watchingLabel: 'Watching upstream',
     watchingSources: ['PRs', 'commits', 'issues', 'releases', 'changelogs', 'advisories'],
   },
