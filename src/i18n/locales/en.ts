@@ -445,7 +445,7 @@ export const en = {
     fields: {
       name: { label: 'Name', placeholder: 'Optional' },
       email: {
-        label: 'Work email',
+        label: 'Email',
         placeholder: 'you@company.com',
         error: 'Please enter a valid email.',
         required: 'required',
