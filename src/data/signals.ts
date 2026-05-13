@@ -16,7 +16,7 @@ export const SCENARIO = {
   ecosystem: 'npm',
   affectedVersions: ['1.14.1', '0.30.4'],
   publishedAt: '2026-03-31T00:21:00Z',
-  yankedAt: '2026-03-31T03:25:00Z',
+  yankedAt: '2026-03-31T03:15:00Z',
   sources: [
     {
       label: 'axios#10636 (maintainer post-mortem)',
@@ -34,8 +34,9 @@ export const SCENARIO = {
 } as const;
 
 // Each signal corresponds to one phase of the worked-example incident. Source
-// URLs resolve to '#' since this is illustrative — the SCENARIO.sources array
-// holds the canonical links for the banner.
+// URLs point to the public artifact that backs each signal's claim — the
+// maintainer post-mortem, an independent researcher write-up, or a vendor
+// mitigation page. Verify externally before changing.
 export const SIGNALS: ReadonlyArray<SignalMeta> = [
   {
     id: 'publicIssue',
@@ -43,7 +44,7 @@ export const SIGNALS: ReadonlyArray<SignalMeta> = [
     statusKey: 'maliciousVersion',
     dependency: DEPENDENCY,
     sourceTypeKey: 'registryRelease',
-    sourceUrl: '#',
+    sourceUrl: 'https://github.com/axios/axios/issues/10636',
     whyFlaggedCount: 4,
   },
   {
@@ -52,7 +53,8 @@ export const SIGNALS: ReadonlyArray<SignalMeta> = [
     statusKey: 'exposureWindow',
     dependency: DEPENDENCY,
     sourceTypeKey: 'manifestChange',
-    sourceUrl: '#',
+    sourceUrl:
+      'https://www.microsoft.com/en-us/security/blog/2026/04/01/mitigating-the-axios-npm-supply-chain-compromise/',
     whyFlaggedCount: 4,
   },
   {
@@ -61,7 +63,7 @@ export const SIGNALS: ReadonlyArray<SignalMeta> = [
     statusKey: 'communityConfirmed',
     dependency: DEPENDENCY,
     sourceTypeKey: 'publicGithubIssue',
-    sourceUrl: '#',
+    sourceUrl: 'https://securitylabs.datadoghq.com/articles/axios-npm-supply-chain-compromise/',
     whyFlaggedCount: 4,
   },
   {
@@ -70,7 +72,7 @@ export const SIGNALS: ReadonlyArray<SignalMeta> = [
     statusKey: 'prCheck',
     dependency: DEPENDENCY,
     sourceTypeKey: 'dependencyUpdate',
-    sourceUrl: '#',
+    sourceUrl: 'https://github.com/axios/axios/issues/10636',
     whyFlaggedCount: 4,
   },
 ];

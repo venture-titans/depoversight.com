@@ -22,7 +22,7 @@ Canonical URL: https://depoversight.com/
 ## Key sections
 
 - Hero
-- Live demo dashboard
+- Interactive demo dashboard (axios npm supply-chain compromise replay)
 - Security scenarios
 - Timeline / exposure window
 - Problem

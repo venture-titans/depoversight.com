@@ -31,9 +31,14 @@ const pt = {
     watchingSources: ['PRs', 'commits', 'issues', 'releases', 'changelogs', 'advisories'],
   },
   demo: {
+    sectionEyebrow: 'Demo interativa',
     sectionTitle: 'Demo ao vivo',
     sectionLead:
       'Um instantâneo do que o DepOversight revela em uma dependência de exemplo. Todos os dados são ilustrativos.',
+    cta: {
+      primary: 'Pedir acesso antecipado',
+      secondary: 'Como funciona',
+    },
     project: 'Projeto',
     environment: 'Ambiente',
     environmentValue: 'produção',
@@ -166,7 +171,7 @@ const pt = {
       publicFix: {
         title: 'Dependência transitiva suspeita introduzida',
         summary:
-          'plain-crypto-js@4.2.1 aparece como dependência de runtime nos releases maliciosos do axios. O pacote foi publicado dois dias antes por um publisher sem histórico prévio.',
+          'plain-crypto-js@4.2.1 aparece como dependência de runtime nos releases maliciosos do axios. Uma versão anterior (4.2.0) foi publicada no dia anterior por um publisher sem histórico prévio.',
         whyFlagged: [
           'Pacote recém-publicado referenciado como dependência de runtime',
           'A conta do publisher não tem histórico prévio de pacotes',
@@ -187,7 +192,7 @@ const pt = {
           'Ativo durante uma janela de 3 horas antes que o npm removesse as versões',
         ],
         recommendedAction:
-          'Audite qualquer ambiente de CI / desenvolvimento que possa ter instalado axios 1.14.1 entre 00:21 e 03:25 UTC.',
+          'Audite qualquer ambiente de CI / desenvolvimento que possa ter instalado axios 1.14.1 entre 00:21 e 03:15 UTC.',
       },
       riskyUpdate: {
         title: 'PR de Renovate atualizando axios bloqueado',
@@ -261,7 +266,7 @@ const pt = {
     events: {
       day0Signal: { day: '31 mar · 00:21 UTC', label: 'axios@1.14.1 publicado no npm' },
       day0Flag: { day: '31 mar · ~02:00 UTC', label: 'DepOversight revela sinal de release anômalo' },
-      day3Merge: { day: '31 mar · 03:25 UTC', label: 'npm remove ambas as versões de axios' },
+      day3Merge: { day: '31 mar · 03:15 UTC', label: 'npm remove ambas as versões de axios' },
       day7Release: { day: '1 abr', label: 'Microsoft, Datadog publicam post-mortems' },
       day14Cve: { day: '~8 abr', label: 'CVE atribuído para os releases comprometidos' },
       day14Scanner: { day: '8 abr+', label: 'Scanners tradicionais alcançam' },

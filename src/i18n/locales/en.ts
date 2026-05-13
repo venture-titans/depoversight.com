@@ -25,14 +25,19 @@ export const en = {
     oneLiner:
       'CVE scanners tell you what is already known. DepOversight shows you what is starting to look risky.',
     primaryCta: 'Request Early Access',
-    secondaryCta: 'View Live Demo',
+    secondaryCta: 'Try the demo',
     watchingLabel: 'Watching upstream',
     watchingSources: ['PRs', 'commits', 'issues', 'releases', 'changelogs', 'advisories'],
   },
   demo: {
-    sectionTitle: 'Live demo',
+    sectionEyebrow: 'Interactive demo',
+    sectionTitle: 'What DepOversight would have caught during the axios npm compromise',
     sectionLead:
-      'A snapshot of what DepOversight surfaces across an example dependency. All data is illustrative.',
+      'A reconstruction of a real supply-chain incident, replayed through the product. Each row is one upstream pattern DepOversight would have raised — before any CVE existed.',
+    cta: {
+      primary: 'Request early access',
+      secondary: 'How it works',
+    },
     project: 'Project',
     environment: 'Environment',
     environmentValue: 'production',
@@ -165,7 +170,7 @@ export const en = {
       publicFix: {
         title: 'Suspicious transitive dependency introduced',
         summary:
-          'plain-crypto-js@4.2.1 appears as a runtime dependency in the malicious axios releases. The package was published two days earlier by a publisher with no prior history.',
+          'plain-crypto-js@4.2.1 appears as a runtime dependency in the malicious axios releases. An earlier version (4.2.0) was published the day before by a publisher with no prior history.',
         whyFlagged: [
           'Newly-published package referenced as runtime dependency',
           'Publisher account has no prior package history',
@@ -186,7 +191,7 @@ export const en = {
           'Active during a 3-hour window before npm yanked the versions',
         ],
         recommendedAction:
-          'Audit any CI / dev environment that may have installed axios 1.14.1 between 00:21 and 03:25 UTC.',
+          'Audit any CI / dev environment that may have installed axios 1.14.1 between 00:21 and 03:15 UTC.',
       },
       riskyUpdate: {
         title: 'Renovate PR upgrading axios blocked',
@@ -260,7 +265,7 @@ export const en = {
     events: {
       day0Signal: { day: '31 Mar · 00:21 UTC', label: 'axios@1.14.1 published to npm' },
       day0Flag: { day: '31 Mar · ~02:00 UTC', label: 'DepOversight surfaces release-anomaly signal' },
-      day3Merge: { day: '31 Mar · 03:25 UTC', label: 'npm yanks both axios versions' },
+      day3Merge: { day: '31 Mar · 03:15 UTC', label: 'npm yanks both axios versions' },
       day7Release: { day: '1 Apr', label: 'Microsoft, Datadog publish post-mortems' },
       day14Cve: { day: '~8 Apr', label: 'CVE assigned for the compromised releases' },
       day14Scanner: { day: '8 Apr +', label: 'Traditional scanners catch up' },
@@ -505,7 +510,7 @@ export const en = {
       resources: 'Resources',
     },
     links: {
-      demo: 'Live demo',
+      demo: 'Demo',
       howItWorks: 'How it works',
       compare: 'vs. CVE scanners',
       earlyAccess: 'Early access',

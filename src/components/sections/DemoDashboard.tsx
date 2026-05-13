@@ -61,7 +61,7 @@ export function DemoDashboard() {
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-10 max-w-3xl text-center">
           <p className="mb-3 text-xs font-medium uppercase tracking-wider text-accent">
-            {t('demo.sectionTitle')}
+            {t('demo.sectionEyebrow')}
           </p>
           <h2 className="text-balance text-3xl font-semibold tracking-tight text-fg sm:text-4xl">
             {t('demo.sectionTitle')}
@@ -191,6 +191,15 @@ export function DemoDashboard() {
         <p className="mx-auto mt-6 max-w-3xl text-center text-xs leading-relaxed text-fg-subtle">
           {t('demo.disclaimer')}
         </p>
+
+        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <LinkButton href="#early-access" variant="primary" size="md">
+            {t('demo.cta.primary')}
+          </LinkButton>
+          <LinkButton href="#how-it-works" variant="secondary" size="md">
+            {t('demo.cta.secondary')}
+          </LinkButton>
+        </div>
       </div>
 
       {showTimeline && (

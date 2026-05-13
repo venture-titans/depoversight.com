@@ -31,9 +31,14 @@ const ja = {
     watchingSources: ['PR', 'コミット', 'Issue', 'リリース', 'Changelog', 'アドバイザリ'],
   },
   demo: {
+    sectionEyebrow: 'インタラクティブデモ',
     sectionTitle: 'ライブデモ',
     sectionLead:
       'サンプル依存関係に対して DepOversight が表面化するもののスナップショット。データはすべて例示です。',
+    cta: {
+      primary: '早期アクセスを申し込む',
+      secondary: '仕組み',
+    },
     project: 'プロジェクト',
     environment: '環境',
     environmentValue: '本番',
@@ -166,7 +171,7 @@ const ja = {
       publicFix: {
         title: '疑わしい推移的依存関係が導入',
         summary:
-          'plain-crypto-js@4.2.1 が悪意のある axios リリースのランタイム依存関係として現れます。このパッケージは2日前に過去の実績のない publisher により公開されました。',
+          'plain-crypto-js@4.2.1 が悪意のある axios リリースのランタイム依存関係として現れます。以前のバージョン (4.2.0) は前日に過去の実績のない publisher により公開されました。',
         whyFlagged: [
           '新しく公開されたパッケージがランタイム依存関係として参照',
           'publisher アカウントに過去のパッケージ履歴なし',
@@ -187,7 +192,7 @@ const ja = {
           'npm がバージョンを取り下げる前の3時間のウィンドウで活動',
         ],
         recommendedAction:
-          '00:21 から 03:25 UTC の間に axios 1.14.1 をインストールした可能性のあるすべての CI / 開発環境を監査してください。',
+          '00:21 から 03:15 UTC の間に axios 1.14.1 をインストールした可能性のあるすべての CI / 開発環境を監査してください。',
       },
       riskyUpdate: {
         title: 'axios をアップグレードする Renovate PR をブロック',
@@ -261,7 +266,7 @@ const ja = {
     events: {
       day0Signal: { day: '3月31日 · 00:21 UTC', label: 'axios@1.14.1 を npm に公開' },
       day0Flag: { day: '3月31日 · ~02:00 UTC', label: 'DepOversight がリリース異常シグナルを表面化' },
-      day3Merge: { day: '3月31日 · 03:25 UTC', label: 'npm が axios の両バージョンを取り下げ' },
+      day3Merge: { day: '3月31日 · 03:15 UTC', label: 'npm が axios の両バージョンを取り下げ' },
       day7Release: { day: '4月1日', label: 'Microsoft、Datadog がポストモーテムを公開' },
       day14Cve: { day: '~4月8日', label: '侵害されたリリースに CVE が割り当てられる' },
       day14Scanner: { day: '4月8日以降', label: '従来のスキャナーが追いつく' },

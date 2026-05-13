@@ -31,9 +31,14 @@ const sv = {
     watchingSources: ['PR:er', 'commits', 'issues', 'releaser', 'changeloggar', 'advisories'],
   },
   demo: {
+    sectionEyebrow: 'Interaktiv demo',
     sectionTitle: 'Livedemo',
     sectionLead:
       'En ögonblicksbild av vad DepOversight lyfter fram för ett exempelberoende. All data är illustrativ.',
+    cta: {
+      primary: 'Begär tidig tillgång',
+      secondary: 'Så fungerar det',
+    },
     project: 'Projekt',
     environment: 'Miljö',
     environmentValue: 'produktion',
@@ -166,7 +171,7 @@ const sv = {
       publicFix: {
         title: 'Misstänkt transitivt beroende infört',
         summary:
-          'plain-crypto-js@4.2.1 syns som runtime-beroende i de skadliga axios-releaserna. Paketet publicerades två dagar tidigare av en publisher utan tidigare historik.',
+          'plain-crypto-js@4.2.1 syns som runtime-beroende i de skadliga axios-releaserna. En tidigare version (4.2.0) publicerades dagen innan av en publisher utan tidigare historik.',
         whyFlagged: [
           'Nyligen publicerat paket refererat som runtime-beroende',
           'Publisher-kontot har ingen tidigare paket-historik',
@@ -187,7 +192,7 @@ const sv = {
           'Aktiv under ett 3-timmarsfönster innan npm drog tillbaka versionerna',
         ],
         recommendedAction:
-          'Granska varje CI- / dev-miljö som kan ha installerat axios 1.14.1 mellan 00:21 och 03:25 UTC.',
+          'Granska varje CI- / dev-miljö som kan ha installerat axios 1.14.1 mellan 00:21 och 03:15 UTC.',
       },
       riskyUpdate: {
         title: 'Renovate-PR som uppgraderar axios blockerad',
@@ -261,7 +266,7 @@ const sv = {
     events: {
       day0Signal: { day: '31 mar · 00:21 UTC', label: 'axios@1.14.1 publicerad på npm' },
       day0Flag: { day: '31 mar · ~02:00 UTC', label: 'DepOversight lyfter fram release-anomali-signal' },
-      day3Merge: { day: '31 mar · 03:25 UTC', label: 'npm drar tillbaka båda axios-versionerna' },
+      day3Merge: { day: '31 mar · 03:15 UTC', label: 'npm drar tillbaka båda axios-versionerna' },
       day7Release: { day: '1 apr', label: 'Microsoft, Datadog publicerar post-mortems' },
       day14Cve: { day: '~8 apr', label: 'CVE tilldelat för komprometterade releaser' },
       day14Scanner: { day: '8 apr+', label: 'Klassiska skannrar hinner ifatt' },

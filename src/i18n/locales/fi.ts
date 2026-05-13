@@ -31,9 +31,14 @@ const fi = {
     watchingSources: ['PR:t', 'commitit', 'issuet', 'releaset', 'changelogit', 'advisoryt'],
   },
   demo: {
+    sectionEyebrow: 'Interaktiivinen demo',
     sectionTitle: 'Live-demo',
     sectionLead:
       'Tilannekuva siitä, mitä DepOversight nostaa esiin esimerkkiriippuvuudelle. Kaikki tieto on havainnollistavaa.',
+    cta: {
+      primary: 'Pyydä varhainen pääsy',
+      secondary: 'Miten toimii',
+    },
     project: 'Projekti',
     environment: 'Ympäristö',
     environmentValue: 'tuotanto',
@@ -166,7 +171,7 @@ const fi = {
       publicFix: {
         title: 'Epäilyttävä transitiivinen riippuvuus tuotu',
         summary:
-          'plain-crypto-js@4.2.1 esiintyy ajonaikaisena riippuvuutena haitallisissa axios-julkaisuissa. Paketin julkaisi kaksi päivää aikaisemmin julkaisija, jolla ei ole aiempaa historiaa.',
+          'plain-crypto-js@4.2.1 esiintyy ajonaikaisena riippuvuutena haitallisissa axios-julkaisuissa. Aiempi versio (4.2.0) julkaistiin edellisenä päivänä julkaisijan toimesta, jolla ei ole aiempaa historiaa.',
         whyFlagged: [
           'Vasta julkaistu paketti viitattu ajonaikaisena riippuvuutena',
           'Julkaisijatilillä ei ole aiempaa pakettihistoriaa',
@@ -187,7 +192,7 @@ const fi = {
           'Aktiivinen 3 tunnin ikkunan ajan ennen kuin npm veti versiot pois',
         ],
         recommendedAction:
-          'Auditoi kaikki CI- / kehitysympäristöt, jotka ovat saattaneet asentaa axios 1.14.1:n välillä 00:21–03:25 UTC.',
+          'Auditoi kaikki CI- / kehitysympäristöt, jotka ovat saattaneet asentaa axios 1.14.1:n välillä 00:21–03:15 UTC.',
       },
       riskyUpdate: {
         title: 'axiosia päivittävä Renovate-PR estetty',
@@ -261,7 +266,7 @@ const fi = {
     events: {
       day0Signal: { day: '31. maalisk · 00:21 UTC', label: 'axios@1.14.1 julkaistu npm:ssä' },
       day0Flag: { day: '31. maalisk · ~02:00 UTC', label: 'DepOversight nostaa esiin julkaisuanomaliasignaalin' },
-      day3Merge: { day: '31. maalisk · 03:25 UTC', label: 'npm vetää pois molemmat axios-versiot' },
+      day3Merge: { day: '31. maalisk · 03:15 UTC', label: 'npm vetää pois molemmat axios-versiot' },
       day7Release: { day: '1. huhtik', label: 'Microsoft, Datadog julkaisevat post-mortemit' },
       day14Cve: { day: '~8. huhtik', label: 'CVE määritetty vaarantuneille julkaisuille' },
       day14Scanner: { day: '8. huhtik+', label: 'Perinteiset skannerit ottavat kiinni' },

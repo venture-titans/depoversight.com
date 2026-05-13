@@ -31,9 +31,14 @@ const nl = {
     watchingSources: ['PRs', 'commits', 'issues', 'releases', 'changelogs', 'advisories'],
   },
   demo: {
+    sectionEyebrow: 'Interactieve demo',
     sectionTitle: 'Live demo',
     sectionLead:
       'Een momentopname van wat DepOversight zichtbaar maakt voor een voorbeeld-dependency. Alle data is illustratief.',
+    cta: {
+      primary: 'Vroege toegang aanvragen',
+      secondary: 'Hoe het werkt',
+    },
     project: 'Project',
     environment: 'Omgeving',
     environmentValue: 'productie',
@@ -166,7 +171,7 @@ const nl = {
       publicFix: {
         title: 'Verdachte transitieve afhankelijkheid geïntroduceerd',
         summary:
-          'plain-crypto-js@4.2.1 verschijnt als runtime-afhankelijkheid in de kwaadaardige axios-releases. Het pakket is twee dagen eerder gepubliceerd door een publisher zonder eerdere historie.',
+          'plain-crypto-js@4.2.1 verschijnt als runtime-afhankelijkheid in de kwaadaardige axios-releases. Een eerdere versie (4.2.0) is de dag ervoor gepubliceerd door een publisher zonder eerdere historie.',
         whyFlagged: [
           'Recent gepubliceerd pakket gerefereerd als runtime-afhankelijkheid',
           'Publisher-account heeft geen eerdere pakkethistorie',
@@ -187,7 +192,7 @@ const nl = {
           'Actief gedurende een venster van 3 uur voordat npm de versies introk',
         ],
         recommendedAction:
-          'Audit elke CI- / dev-omgeving die axios 1.14.1 mogelijk heeft geïnstalleerd tussen 00:21 en 03:25 UTC.',
+          'Audit elke CI- / dev-omgeving die axios 1.14.1 mogelijk heeft geïnstalleerd tussen 00:21 en 03:15 UTC.',
       },
       riskyUpdate: {
         title: 'Renovate-PR die axios upgradet geblokkeerd',
@@ -261,7 +266,7 @@ const nl = {
     events: {
       day0Signal: { day: '31 mrt · 00:21 UTC', label: 'axios@1.14.1 gepubliceerd op npm' },
       day0Flag: { day: '31 mrt · ~02:00 UTC', label: 'DepOversight haalt release-anomalie-signaal naar boven' },
-      day3Merge: { day: '31 mrt · 03:25 UTC', label: 'npm trekt beide axios-versies in' },
+      day3Merge: { day: '31 mrt · 03:15 UTC', label: 'npm trekt beide axios-versies in' },
       day7Release: { day: '1 apr', label: 'Microsoft, Datadog publiceren post-mortems' },
       day14Cve: { day: '~8 apr', label: 'CVE toegewezen voor de gecompromitteerde releases' },
       day14Scanner: { day: '8 apr+', label: 'Traditionele scanners halen in' },

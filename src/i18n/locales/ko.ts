@@ -31,9 +31,14 @@ const ko = {
     watchingSources: ['PR', '커밋', 'Issue', '릴리스', 'Changelog', '권고'],
   },
   demo: {
+    sectionEyebrow: '인터랙티브 데모',
     sectionTitle: '라이브 데모',
     sectionLead:
       '예시 의존성에 대해 DepOversight가 드러내는 것의 스냅샷입니다. 모든 데이터는 예시입니다.',
+    cta: {
+      primary: '얼리 액세스 신청',
+      secondary: '작동 방식',
+    },
     project: '프로젝트',
     environment: '환경',
     environmentValue: '프로덕션',
@@ -166,7 +171,7 @@ const ko = {
       publicFix: {
         title: '의심스러운 전이 의존성 도입',
         summary:
-          'plain-crypto-js@4.2.1이 악성 axios 릴리스의 런타임 의존성으로 등장합니다. 해당 패키지는 이전 이력이 없는 publisher가 이틀 전에 게시했습니다.',
+          'plain-crypto-js@4.2.1이 악성 axios 릴리스의 런타임 의존성으로 등장합니다. 이전 버전 (4.2.0)은 이전 이력이 없는 publisher가 하루 전에 게시했습니다.',
         whyFlagged: [
           '신규 게시된 패키지가 런타임 의존성으로 참조됨',
           'publisher 계정에 이전 패키지 이력 없음',
@@ -187,7 +192,7 @@ const ko = {
           'npm이 버전을 회수하기 전 3시간 동안 활성화',
         ],
         recommendedAction:
-          '00:21에서 03:25 UTC 사이에 axios 1.14.1을 설치했을 가능성이 있는 모든 CI / 개발 환경을 감사하세요.',
+          '00:21에서 03:15 UTC 사이에 axios 1.14.1을 설치했을 가능성이 있는 모든 CI / 개발 환경을 감사하세요.',
       },
       riskyUpdate: {
         title: 'axios를 업그레이드하는 Renovate PR 차단',
@@ -261,7 +266,7 @@ const ko = {
     events: {
       day0Signal: { day: '3월 31일 · 00:21 UTC', label: 'axios@1.14.1을 npm에 게시' },
       day0Flag: { day: '3월 31일 · ~02:00 UTC', label: 'DepOversight가 릴리스 이상 시그널을 표면화' },
-      day3Merge: { day: '3월 31일 · 03:25 UTC', label: 'npm이 axios의 두 버전을 회수' },
+      day3Merge: { day: '3월 31일 · 03:15 UTC', label: 'npm이 axios의 두 버전을 회수' },
       day7Release: { day: '4월 1일', label: 'Microsoft, Datadog가 포스트모템 게시' },
       day14Cve: { day: '~4월 8일', label: '침해된 릴리스에 CVE 할당' },
       day14Scanner: { day: '4월 8일+', label: '전통적 스캐너 따라잡음' },

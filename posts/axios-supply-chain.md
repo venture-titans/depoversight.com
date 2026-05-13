@@ -1,12 +1,12 @@
 ---
 title: 'How DepOversight would have caught the axios npm compromise'
 date: 2026-05-01
-excerpt: 'On 31 March 2026, two malicious axios releases were live on npm for just over three hours. There was no CVE. There was no advisory. Here is what we would have surfaced, and when.'
+excerpt: 'On 31 March 2026, two malicious axios releases were live on npm for just under three hours. There was no CVE. There was no advisory. Here is what we would have surfaced, and when.'
 category: fundamentals
 tags: [supply-chain, npm, axios, worked-example]
 ---
 
-On **31 March 2026 at 00:21 UTC**, `axios@1.14.1` was published to npm. Forty minutes later, `axios@0.30.4` followed. Both contained a hidden post-install hook that fetched a runtime payload, a cross-platform RAT, from an attacker-controlled domain. By **03:25 UTC**, npm had yanked both versions. From first publish to yank, the window was three hours and four minutes.
+On **31 March 2026 at 00:21 UTC**, `axios@1.14.1` was published to npm. Forty minutes later, `axios@0.30.4` followed. Both contained a hidden post-install hook that fetched a runtime payload, a cross-platform RAT, from an attacker-controlled domain. By **03:15 UTC**, npm had yanked both versions. From first publish to yank, the window was two hours and fifty-four minutes.
 
 During those three hours, every CI environment that ran `npm install` against an unconstrained `^1.13` or `^0.29` axios range pulled the malicious code. Every Renovate or Dependabot PR that auto-merged a patch upgrade in that window was a delivery vehicle. There was no CVE. There was no GHSA advisory. Traditional scanners had nothing to flag.
 
@@ -18,10 +18,10 @@ Public reporting from Datadog Security Labs, Microsoft, and the maintainer post-
 
 1. **00:21 UTC**, `axios@1.14.1` published to npm. The maintainer's normal release cadence at this point was every 4–6 weeks; the previous release was 8 days prior. The publish came from a fresh npm token, not the maintainer's usual one.
 2. **01:00 UTC**, `axios@0.30.4` published to npm. Same payload, targeted at projects still pinned to the legacy 0.x line.
-3. **00:21–03:25 UTC**, Both versions live on the registry. CI systems and developer machines pulling `axios` resolved to the malicious release.
+3. **00:21–03:15 UTC**, Both versions live on the registry. CI systems and developer machines pulling `axios` resolved to the malicious release.
 4. **02:11 UTC**, First independent researcher (Datadog) flags the release as suspicious based on a new transitive dependency, `plain-crypto-js@4.2.1`, with no prior history.
 5. **02:54 UTC**, axios maintainers acknowledge the compromise in issue #10636.
-6. **03:25 UTC**, npm yanks both versions.
+6. **03:15 UTC**, npm yanks both versions.
 7. **08 April 2026**, CVE assigned (well after the active window closed).
 
 The dangerous window is the first three hours. **No traditional scanner produces a signal during that window**, because traditional scanners only know what an advisory database tells them.
@@ -47,7 +47,7 @@ Each of those is benign in isolation. Together they form the pattern of a regist
 
 > **00:22 UTC.** `plain-crypto-js@4.2.1` referenced as a runtime dependency.
 
-The new transitive package is published two days earlier by an account with no prior packages, and the package name shadows a well-known cryptography library. Its post-install script downloads a remote binary at install time.
+The package's first version (`4.2.0`) was published the day before by an account with no prior packages, and the package name shadows a well-known cryptography library. Its post-install script downloads a remote binary at install time.
 
 This is not "axios is vulnerable." It is "a release of axios introduces a dependency that on its own merits a security review."
 
@@ -74,7 +74,7 @@ The check is the policy enforcement layer. It is the difference between "we noti
 
 A useful way to look at any supply-chain incident is to draw the timeline twice: once for what the public knew, and once for what your scanner knew.
 
-For axios, the public knew something was off **at 02:11 UTC** (researcher posts), and the maintainer confirmed **at 02:54 UTC**. The CVE landed **on 08 April**. Between 02:11 UTC on 31 March and the CVE on 08 April, traditional scanners had nothing actionable. **That eight-day gap, plus the three-hour active-attack window before it, is where DepOversight is designed to operate.**
+For axios, the public knew something was off **at 02:11 UTC** (researcher posts), and the maintainer confirmed **at 02:54 UTC**. The CVE landed **on 08 April**. Between 02:11 UTC on 31 March and the CVE on 08 April, traditional scanners had nothing actionable. **That eight-day gap, plus the nearly-three-hour active-attack window before it, is where DepOversight is designed to operate.**
 
 ## What this is not
 
