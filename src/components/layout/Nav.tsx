@@ -22,20 +22,14 @@ export function Nav() {
       <header className="sticky top-0 z-30 border-b border-line bg-ink-950/85 backdrop-blur supports-[backdrop-filter]:bg-ink-950/65">
         <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
           <Link to="/" className="flex items-center gap-2 font-semibold tracking-tight text-fg">
-            <span
+            <img
+              src="/favicon-96x96.png"
+              alt=""
               aria-hidden="true"
-              className="flex h-7 w-7 items-center justify-center rounded-md border border-line-strong bg-ink-800 text-accent"
-            >
-              <svg viewBox="0 0 20 20" className="h-3.5 w-3.5" fill="none" aria-hidden="true">
-                <path
-                  d="M3 5l7 4 7-4M3 10l7 4 7-4M3 15l7 4 7-4"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </span>
+              width={28}
+              height={28}
+              className="h-7 w-7 rounded-md"
+            />
             {t('nav.brand')}
           </Link>
 

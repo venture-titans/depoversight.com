@@ -26,20 +26,14 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-3">
           <div>
             <div className="flex items-center gap-2 font-semibold tracking-tight">
-              <span
+              <img
+                src="/favicon-96x96.png"
+                alt=""
                 aria-hidden="true"
-                className="flex h-7 w-7 items-center justify-center rounded-md border border-line-strong bg-ink-800 text-accent"
-              >
-                <svg viewBox="0 0 20 20" className="h-3.5 w-3.5" fill="none" aria-hidden="true">
-                  <path
-                    d="M3 5l7 4 7-4M3 10l7 4 7-4M3 15l7 4 7-4"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </span>
+                width={28}
+                height={28}
+                className="h-7 w-7 rounded-md"
+              />
               {t('nav.brand')}
             </div>
             <p className="mt-3 max-w-sm text-sm text-fg-muted">{t('footer.tagline')}</p>

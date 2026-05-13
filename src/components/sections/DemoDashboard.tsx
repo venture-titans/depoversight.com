@@ -468,7 +468,13 @@ function SignalDetail({
       </div>
 
       <div className="flex flex-wrap items-center gap-2 border-t border-line bg-ink-800/40 px-5 py-3">
-        <LinkButton href={signal.sourceUrl} variant="ghost" size="sm">
+        <LinkButton
+          href={signal.sourceUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="ghost"
+          size="sm"
+        >
           {t('demo.detail.viewSource')}
           <svg viewBox="0 0 12 12" className="h-3 w-3" fill="none" aria-hidden="true">
             <path
